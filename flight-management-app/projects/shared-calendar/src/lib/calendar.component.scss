@@ -1,0 +1,137 @@
+.calendar-container {
+  max-width: 320px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  color: #6b7280;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background-color: #f3f4f6;
+    color: #374151;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.month-year {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+
+.weekday-header {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+  padding: 8px 4px;
+  text-transform: uppercase;
+}
+
+.calendar-day {
+  aspect-ratio: 1;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+
+  &:hover:not(:disabled) {
+    background-color: #e5e7eb;
+  }
+
+  &:active:not(:disabled) {
+    transform: scale(0.95);
+  }
+
+  &.other-month {
+    color: #d1d5db;
+    cursor: default;
+
+    &:hover {
+      background: none;
+    }
+  }
+
+  &.today {
+    background-color: #dbeafe;
+    color: #1d4ed8;
+    font-weight: 600;
+  }
+
+  &.selected {
+    background-color: #3b82f6;
+    color: white;
+    font-weight: 600;
+
+    &:hover {
+      background-color: #2563eb;
+    }
+  }
+
+  &:disabled {
+    color: #d1d5db;
+    cursor: not-allowed;
+    opacity: 0.5;
+
+    &:hover {
+      background: none;
+    }
+  }
+}
+
+// Responsive design
+@media (max-width: 480px) {
+  .calendar-container {
+    max-width: 280px;
+    padding: 16px;
+  }
+
+  .calendar-day {
+    min-height: 32px;
+    font-size: 13px;
+  }
+
+  .month-year {
+    font-size: 16px;
+  }
+}

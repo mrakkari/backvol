@@ -1,0 +1,7 @@
+@@ .. @@
+     "paths": {
++      "shared-calendar": [
++        "dist/shared-calendar/shared-calendar",
++        "dist/shared-calendar"
++      ]
+     }
